@@ -13,7 +13,7 @@ export default function App() {
   const [platform, setPlatform] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
 
-  const [comments, setComments] = useState([]);
+  const [, setComments] = useState([]);
   const [toxicComments, setToxicComments] = useState([]);
 
   const [text, setText] = useState("");
