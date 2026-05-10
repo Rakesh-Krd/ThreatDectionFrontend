@@ -4,6 +4,10 @@ import axios from "axios";
 export default function App() {
 
   // =========================
+  // Environment Variables
+  // =========================
+  const API_URL = process.env.REACT_APP_API_URL;
+  
   // States
   // =========================
   const [platform, setPlatform] = useState("");
@@ -171,7 +175,7 @@ https://www.googleapis.com/youtube/v3/commentThreads
             // =========================
             const analysis =
               await axios.post(
-                "http://localhost:8000/predict",
+                `${API_URL}/predict`,
                 {
                   text: cleanComment
                 }
@@ -244,7 +248,7 @@ https://www.googleapis.com/youtube/v3/commentThreads
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:8000/predict",
+        `${API_URL}/predict`,
         {
           text: text,
           email: email
