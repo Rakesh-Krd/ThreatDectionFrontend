@@ -13,7 +13,7 @@ export default function App() {
   const [platform, setPlatform] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
 
-  const [, setComments] = useState([]);
+  const [comments, setComments] = useState([]);
   const [toxicComments, setToxicComments] = useState([]);
 
   const [text, setText] = useState("");
@@ -301,7 +301,7 @@ ${result.reason}`
       <div style={{ marginBottom: "30px" }}>
 
         <h1 style={{ fontSize: "40px" }}>
-          AI Threat Detection System
+          AI-Based Threat Detection System
         </h1>
 
         <p style={{ color: "#cbd5e1" }}>
@@ -339,7 +339,21 @@ ${result.reason}`
 
                 <div
                   key={p.name}
-                  onClick={() => setPlatform(p.name)}
+                  onClick={() => {
+
+  if (
+    p.name === "Instagram" ||
+    p.name === "Twitter/X"
+  ) {
+
+    alert(`${p.name} integration coming soon`);
+
+    return;
+  }
+
+  setPlatform(p.name);
+
+}}
                   style={{
                     marginTop: "15px",
                     background:
