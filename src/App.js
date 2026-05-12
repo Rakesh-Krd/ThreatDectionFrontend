@@ -103,7 +103,7 @@ export default function App() {
 https://www.googleapis.com/youtube/v3/commentThreads
 ?part=snippet
 &videoId=${videoId}
-&maxResults=200
+&maxResults=50
 &key=${API_KEY}
 `;
 
